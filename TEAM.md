@@ -5,14 +5,14 @@
 - Tên nhóm: HuuDuyen
 - Lớp: L3B
 - Repo nhóm: `K5-L3B-DAY13-HuuDuyen-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: https://github.com/quanghuynguyenba/K5-L3B-DAY13-HuuDuyen-LaunchEconomics · Nhánh: main · Commit chốt: 2a8ad1a
+- URL repo, nhánh nộp, commit chốt: https://github.com/quanghuynguyenba/K5-L3B-DAY13-HuuDuyen-LaunchEconomics · Nhánh: main · Commit chốt (trước deadline 23h59 25/11): 2a8ad1a
 
 ## Thành viên
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Mai Danh Hiếu | 2A202603948 | danhhieu123ns@gmail.com | danhhieu204ns | Người viết code (CP1–CP2) |
-|   2 | Lê Tuấn Đạt | 2A202603949 | letuandat@vinuni.edu.vn | letuandat131 | Người gắn nhãn 2 kiêm giữ hồ sơ |
+|   2 | Lê Tuấn Đạt | 2A202603949 | letuandat.cv@gmail.com | letuandat131 | Người gắn nhãn 2 kiêm giữ hồ sơ |
 |   3 | Vũ Huy Hiệu | 2A202603979 | hieuvippro531@gmail.com | hieunhangia | Người gắn nhãn 1 (CP3) |
 |   4 | Nguyễn Bá Quang Huy | 2A202603926 | quanghuynguyenba@gmail.com | quanghuynguyenba | Người kiểm số |
 
@@ -55,7 +55,7 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 - `src/lab13.py`: chạy `python lab13.py` từ thư mục `src/`, ba phép thử A1 in **ĐẠT**.
 - `report/team/bang_chi_phi.md`: bảng A1–A4, B1–B4.
 - Báo cáo cá nhân: `report/team/2A202603948_MaiDanhHieu.md`.
-- Commit `47d45bd`, `6c9cec7`, `b732f3b` (merge qua PR #1).
+- Commit `47d45bd`, `6c9cec7` (merge qua PR #1).
 
 ## LeTuanDat-2A202603949
 
@@ -78,7 +78,7 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 - File hồ sơ tổng hợp Gate 2a: `report/team/ho_so_launch_v0.md`.
 - Báo cáo cá nhân: `report/team/2A202603949_LeTuanDat.md`.
 - Commit `27f0d0d`, `e61b0c1`, `4774c3c`, `3b4e225`, `0407f8a`, `aeb7a50` (merge qua PR #2, PR #4, PR #6).
-- Lưu ý: 5 commit đầu hiện tác giả là "Lê Tuấn Đạt <letuandat@vinuni.edu.vn>". Email này đã được cấu hình trong git trên máy cá nhân và được bổ sung xác minh trên tài khoản GitHub `letuandat131` để gắn lại đóng góp.
+- Lưu ý: 5 commit đầu hiện tác giả là "Lê Tuấn Đạt <letuandat@vinuni.edu.vn>". Email này bị cấu hình nhầm trong git trên máy cá nhân, không phải hộp thư thật, nên không xác minh được và GitHub không liên kết với tài khoản. Cả 5 commit đều do tài khoản GitHub `letuandat131` thực hiện; commit `aeb7a50` dùng email đã liên kết với `letuandat131`.
 
 ## VuHuyHieu-2A202603979
 
@@ -97,7 +97,7 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 - File nhãn lỗi: `report/team/bang_loi.md` (cột Nhãn người 1 - Vũ Huy Hiệu, tỉ lệ đồng thuận 95% và biên bản ca 9).
 - Báo cáo cá nhân: `report/team/2A202603979_VuHuyHieu.md`.
-- Commit `63c2263`, `2e7df61`.
+- Commit `63c2263` (trên `main`). Commit `2e7df61` nằm ở PR #5, chưa merge.
 
 ## NguyenBaQuangHuy-2A202603926
 
@@ -112,7 +112,7 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 - Kiểm tra hoá đơn token và tool bình quân: (245.585 + 84.000) / 1.200 ≈ 274,7 đ/yêu cầu; tỷ số 4.472 / 274,7 ≈ 16,3 lần.
 - Kiểm tra phần chi phí làm lại: 2.264.000 / 4.373.585 ≈ 51,8% tổng chi phí.
 - Ghi nhận các số dựa trên thời gian xem lại/làm lại giả lập cần mang nhãn `simulated`.
-- Quản trị repository nhóm, duyệt và merge các pull request của các thành viên (PR #1, PR #2, PR #4, PR #6).
+- Quản trị repository nhóm, duyệt và merge các pull request của các thành viên (PR #1, PR #2, PR #4).
 
 ### Bằng chứng
 
@@ -120,3 +120,7 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 - `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md`: số tham chiếu để đối chiếu.
 - Báo cáo cá nhân: `report/team/2A202603926_NguyenBaQuangHuy.md`.
 - Lịch sử quản trị PR và commit `bf47e39` trên repo nhóm.
+
+## Ghi chú bổ sung sau deadline
+
+- Bản nộp là commit `2a8ad1a` (25/11, 23:55). Các thay đổi ở PR #7 (email, mục đóng góp từng thành viên, người phụ trách và ngày kiểm tra cho 4 điều kiện trong `report/team/ho_so_launch_v0.md`) được commit sau 23h59 ngày 25/11.
