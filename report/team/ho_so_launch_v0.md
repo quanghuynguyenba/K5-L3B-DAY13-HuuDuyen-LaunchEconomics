@@ -16,7 +16,15 @@ Nhóm: HuuDuyen · Lớp: L3B
 
 **Đề xuất:** Go có điều kiện
 
-- **Điều kiện 1:** Kỹ sư trưởng agent triển khai khoá chống trùng (idempotency key) và đối soát sổ cái tự động (khắc phục ca 7, 20) trước ngày bắt đầu pilot (2026-12-01).
-- **Điều kiện 2:** Giám đốc vận hành ký duyệt chấp nhận MDE 6 điểm (power 0,64 ở mức 5 điểm) do giới hạn 40 nhân viên CSKH.
-- **Điều kiện 3:** Bật đủ logging 10 event có `trace_id`; sau tuần 1 thay số phút giả lập bằng dữ liệu đo thời gian thực tế.
-- **Điều kiện 4:** Trưởng nhóm CSKH có kế hoạch giảm tỉ lệ xem lại theo bậc (từ 50% xuống 20% khi tỉ lệ sửa/bỏ < 15%), tránh rủi ro xem lại 100% gây lỗ (B4).
+- **Điều kiện 1:** Triển khai khoá chống trùng (idempotency key) và đối soát sổ cái tự động để khắc phục dứt điểm ca lỗi 7 và 20 trước khi vận hành.
+  - Người phụ trách: Kỹ sư trưởng agent
+  - Ngày kiểm tra: 2026-12-01 (trước ngày bắt đầu pilot)
+- **Điều kiện 2:** Ký văn bản phê duyệt chấp thuận MDE 6 điểm (power 0,64 ở mức chênh 5 điểm) do giới hạn quy mô 40 nhân viên CSKH tại 12 depot.
+  - Người phụ trách: Giám đốc vận hành
+  - Ngày kiểm tra: 2026-11-28 (trước khi phân nhóm nhân viên pilot)
+- **Điều kiện 3:** Kích hoạt đầy đủ hạ tầng logging 10 event có `trace_id`; sau tuần 1 thay thế các tham số phút giả lập (`_simulated`) bằng số liệu đo lường vận hành thực tế.
+  - Người phụ trách: Kỹ sư trưởng agent
+  - Ngày kiểm tra: 2026-11-30 (kiểm tra logging trước launch) và 2026-12-08 (đối soát dữ liệu thực tế sau tuần 1)
+- **Điều kiện 4:** Ban hành quy trình giảm tỉ lệ xem lại theo bậc (từ 50% xuống 20% khi tỉ lệ sửa/bỏ < 15%), phòng ngừa rủi ro xem lại 100% kéo dài làm chi phí vượt 12.000 đ/việc gây lỗ (theo kịch bản B4).
+  - Người phụ trách: Trưởng nhóm CSKH
+  - Ngày kiểm tra: 2026-11-29 (kiểm tra quy trình trước pilot) và 2026-12-15 (đánh giá định kỳ sau 2 tuần)

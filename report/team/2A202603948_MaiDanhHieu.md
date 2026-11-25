@@ -5,7 +5,7 @@
 
 - Họ tên: Mai Danh Hiếu
 - MSSV: 2A202603948
-- Email: 
+- Email: danhhieu123ns@gmail.com
 - Vai trong nhóm (người viết code, người kiểm số, người gắn nhãn 1, người gắn nhãn 2 kiêm giữ hồ sơ): Người viết code
 
 ## 2. Phần việc phụ trách
