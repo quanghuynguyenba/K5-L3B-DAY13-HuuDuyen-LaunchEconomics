@@ -2,6 +2,13 @@
 
 20 ca lỗi nằm trong `docs/Ngay13_Lab13_De_bai_hoc_vien.docx`. Năm loại theo Google PAIR: **Do người dùng · Hệ thống · Ngữ cảnh · Giới hạn hệ thống · Ngầm**. Gắn nhãn theo nguyên nhân gốc, không theo chỗ cần sửa.
 
+## Trạng thái CP3 — hoàn tất hai giai đoạn
+
+- Hai người đã hoàn tất độc lập 20/20 nhãn; các nhãn đều thuộc năm loại quy định.
+- Đối chiếu: 19/20 ca trùng, đồng thuận 95% (đạt ngưỡng 80%); ca lệch duy nhất là ca 9.
+- Giữ nguyên nhãn gốc của cả hai người; nhãn thống nhất và quy tắc phân biệt ca 9 được ghi trong bảng bên dưới.
+- Bảng khắc phục có đủ năm loại lỗi.
+
 ## Hai bộ nhãn độc lập
 
 Người gắn nhãn 1: Vũ Huy Hiệu · Người gắn nhãn 2: Lê Tuấn Đạt (gắn trong 8 phút, không trao đổi)

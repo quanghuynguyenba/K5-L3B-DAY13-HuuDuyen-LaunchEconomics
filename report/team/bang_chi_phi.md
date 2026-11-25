@@ -78,5 +78,5 @@ Số tính bằng `src/lab13.py`. Mọi con số tính từ cột `_simulated` g
 
 ## B4 · Nếu phải xem lại tất cả
 
-- Với 948 yêu cầu cần xem lại và 48 ca làm lại, giả định 9 phút làm lại/ca cho 11.743 đ/việc (0,98× mức 12.000 đ); dùng trung bình 15,3 phút giả lập cho 12.415 đ/việc (1,03×) [simulated]. Hướng dẫn ghi 12.414 đ nhưng 11.173.313 ÷ 900 = 12.414,79 đ, làm tròn là 12.415 đ.
+- Trong phạm vi `noi_dia` + `hang_nang` (982 yêu cầu), xem lại 100% số yêu cầu có ít nhất một lượt `ok` (948 yêu cầu): giả định 9 phút làm lại/ca cho 11.743 đ/việc (0,98× mức 12.000 đ); dùng trung bình 15,3 phút simulated cho 12.415 đ/việc (1,03×) [simulated]. Phép tính 11.173.313 ÷ 900 = 12.414,79 đ, làm tròn là 12.415 đ.
 - Pilot cần đo xem có thể giảm an toàn tỉ lệ xem lại và giữ thời gian mỗi lần xem lại dưới mức hòa vốn 5,1 phút (khi làm lại 9 phút/ca) hoặc 4,8 phút (khi làm lại 15,3 phút/ca) [simulated].

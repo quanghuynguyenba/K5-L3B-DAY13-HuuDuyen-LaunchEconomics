@@ -1,52 +1,51 @@
 # Báo cáo nhóm
 
-Báo cáo ngắn, tối đa 2 trang. Số liệu chi tiết nằm trong các file hồ sơ; ở đây chỉ dẫn lại con số chính.
-
 ## 1. Thông tin nhóm
 
 - Tên nhóm: HuuDuyen
 - Lớp: L3B
-- Thành viên: xem `TEAM.md` (4 thành viên: Mai Danh Hiếu, Lê Tuấn Đạt, Vũ Huy Hiệu, Nguyễn Bá Quang Huy)
+- Thành viên: Mai Danh Hiếu, Lê Tuấn Đạt, Vũ Huy Hiệu, Nguyễn Bá Quang Huy
+- Phân vai: xem `TEAM.md`.
 
 ## 2. Mục tiêu và cách tiếp cận
 
-Đánh giá hiệu quả kinh tế thực tế và mức độ sẵn sàng vận hành của trợ lý hoàn phí LogiX-VN trên dữ liệu chạy thử giả lập (1.200 yêu cầu, 1.624 lần chạy), từ đó lập bộ hồ sơ launch v0 trình Hội đồng Gate 2a xin phê duyệt kế hoạch chạy **pilot** (chưa phải mở rộng toàn bộ). Nhóm chia 4 vai trò rõ ràng: phân tích chi phí và độ nhạy bằng Python, gắn nhãn lỗi độc lập theo chuẩn Google PAIR, thiết kế pilot đủ năng lực thống kê và tổng hợp hồ sơ một trang.
+Nhóm đánh giá hiệu quả kinh tế và rủi ro vận hành của trợ lý hoàn phí LogiX-VN trên bộ dữ liệu giả lập gồm 1.200 yêu cầu và 1.624 lần chạy. Mục tiêu là chuẩn bị hồ sơ xin duyệt kế hoạch pilot tại Gate 2a, không phải xin mở rộng triển khai chính thức.
 
-## 3. Giải pháp
+Nhóm thực hiện mô hình chi phí và phân tích độ nhạy (A–B), gắn nhãn độc lập 20 ca lỗi (C), tính cỡ mẫu và lập kế hoạch pilot (D), sau đó tổng hợp chỉ số, event và rủi ro (E).
 
-- **Nhiệm vụ A & B (CP1–CP2):** Code mô hình chi phí từ trace trong `src/lab13.py` (tính mọi lần chạy kể cả lỗi + giờ xem lại/làm lại chia cho số việc thành công), tách 4 loại yêu cầu, cộng chi phí cố định 40 triệu đ/tháng và chạy 9 kịch bản độ nhạy trong [bang_chi_phi.md](bang_chi_phi.md).
-- **Nhiệm vụ C (CP3):** Hai thành viên gắn nhãn độc lập 20 ca lỗi theo 5 loại Google PAIR, đối chiếu đạt đồng thuận 95% (19/20 ca), thống nhất quy tắc phân biệt ca bất đồng số 9 và lập bảng khắc phục 5 ca đại diện trong [bang_loi.md](bang_loi.md).
-- **Nhiệm vụ D (CP4):** Tính cỡ mẫu cụm (ICC = 0,02) trong `src/lab13.py` và hoàn thiện kế hoạch thử nghiệm ngẫu nhiên phân tầng theo nhân viên (20 + 20) kèm 3 luật dừng 4 vế trong [pilot_plan.yaml](pilot_plan.yaml).
-- **Nhiệm vụ E (CP5):** Đặc tả chỉ số, 10 event có `trace_id` và rủi ro kinh tế trong [chi_so.md](chi_so.md); tổng hợp thành hồ sơ 1 trang [ho_so_launch_v0.md](ho_so_launch_v0.md).
+## 3. Kết quả chính
 
-## 4. Kết quả
+- **Chi phí (A):** Tổng mô hình là 4.373.585đ cho 978 việc thành công, tương đương khoảng 4.472đ/việc. Hoá đơn token và tool chia cho 1.200 yêu cầu là 274,7đ/yêu cầu; tỷ số khoảng 16,3 lần. Chi phí xem lại và làm lại dựa trên dữ liệu `_simulated`, nên tổng chi phí và chi phí mỗi việc thành công có phần giả lập.
+- **Phạm vi và độ nhạy (A–B):** `noi_dia` là 2.696đ/việc (0,22× mức 12.000đ của nhân viên) và `hang_nang` là 8.221đ (0,69×); `quoc_te` là 22.515đ (1,88×). Số ca làm lại là yếu tố nhạy nhất: tăng gấp đôi làm chi phí lên 6.787đ/việc (+51,8%). Giới hạn 2 lần chạy có tổng chi phí hệ thống thấp nhất trong ba phương án, 6.901.220đ. Các kết quả có phần giả lập.
+- **Phân loại lỗi (C):** Hai người gắn nhãn độc lập đạt 19/20 ca, tương đương 95% đồng thuận. Ca bất đồng là ca 9; nhóm thống nhất nhãn “Do người dùng” theo nguyên nhân gốc. Bảng khắc phục có đủ năm loại lỗi.
+- **Kế hoạch pilot (D):** Nhóm chọn chia theo nhân viên: 20 người dùng trợ lý và 20 người đối chứng. Với giới hạn 40 nhân viên, không đủ mẫu để phát hiện mức chênh 5 điểm; nhóm chấp nhận MDE 6 điểm, cần 859 yêu cầu mỗi nhóm và tối thiểu 299 yêu cầu mỗi nhân viên. Nếu tác động thật chỉ là 5 điểm, power ước tính khoảng 0,64.
+- **Chỉ số (E):** Chỉ số chính trong bộ dữ liệu là 82,83% (994/1.200); tỉ lệ bỏ qua gợi ý là 27,12% (48/177); tỉ lệ mở lại trong 7 ngày là 4,25% (51/1.200). Đây là số liệu chạy thử, không chứng minh trợ lý đã cải thiện kết quả so với đối chứng.
 
-- **Chi phí thật:** 4.472 đ/việc thành công [simulated], gấp 16,3× hoá đơn token + tool chia đều (274,7 đ/yc); giờ nhân viên chiếm 92,5% tổng chi phí.
-- **Phạm vi pilot & độ nhạy:** Chỉ giữ `noi_dia` (2.696 đ, 0,22×) và `hang_nang` (8.221 đ, 0,69×); loại `quoc_te` (22.515 đ, 1,88×) và `doi_tac`. Giới hạn 2 lần chạy rẻ nhất cả hệ thống (6.901.220 đ [simulated]). Yếu tố nhạy nhất là số ca làm lại (+51,8% khi gấp đôi); xem lại 100% có thể nâng chi phí lên 11.743–12.415 đ/việc [simulated].
-- **Đề xuất Gate 2a:** **Go có điều kiện** cho pilot phạm vi `noi_dia` + `hang_nang` (triển khai idempotency key và đối soát sổ cái, ký chấp nhận MDE 6 điểm, bật đủ 10 event và lộ trình giảm xem lại theo bậc).
-- **Kết quả duyệt chéo từ hội đồng:** *(Điền sau phiên duyệt chéo tại lớp trong `report/team/phieu_cham.md`).*
+Chi tiết xem tại [bang_chi_phi.md](bang_chi_phi.md), [bang_loi.md](bang_loi.md), [pilot_plan.yaml](pilot_plan.yaml), [chi_so.md](chi_so.md) và [ho_so_launch_v0.md](ho_so_launch_v0.md).
 
-## 5. Khó khăn và cách xử lý
+## 4. Đề xuất Gate 2a
 
-- Với 40 nhân viên hiện tại, cỡ mẫu hiệu dụng tối đa không đủ phát hiện mức chênh +5 điểm (1.000 < 1.251); nhóm xử lý bằng cách chọn MDE +6 điểm (n = 859/nhóm, m ≥ 299 yêu cầu/nhân viên) và ghi rõ đánh đổi power 0,64 ở mức +5 điểm.
-- Ở CP3, hai người gắn nhãn ban đầu lệch nhau ở ca 9 (`Hệ thống` vs `Do người dùng`); nhóm đối chiếu lại nguyên tắc "gắn theo nguyên nhân gốc, không theo chỗ cần sửa" để thống nhất nhãn `Do người dùng`.
+Nhóm đề xuất **Go có điều kiện** cho pilot giới hạn ở `noi_dia` và `hang_nang`. Điều kiện gồm triển khai idempotency key và đối soát sổ cái, bật logging cần thiết, ghi rõ việc chấp nhận MDE 6 điểm, và thay các giả định thời gian giả lập bằng số đo thực tế trong pilot. Áp dụng các luật dừng và rollback đã ghi trong `pilot_plan.yaml`.
 
-## 6. Tổng hợp đóng góp
+## 5. Khó khăn và hạn chế
 
-Chi tiết đóng góp của từng thành viên nằm trong `TEAM.md`:
+- Thời gian xem lại và làm lại hiện lấy từ các cột `_simulated`; cần đo thời gian thực qua event trong pilot.
+- Cỡ mẫu hiện có không đủ để phát hiện mức chênh 5 điểm theo thiết kế cụm; lựa chọn MDE 6 điểm làm giảm khả năng phát hiện hiệu quả nhỏ hơn.
+- Cần kiểm tra mẫu định kỳ để phát hiện lỗi ngầm về số tiền hoàn và phiên bản bảng giá.
 
-- **Mai Danh Hiếu (`2A202603948`) — Người viết code (CP1–CP2):** hoàn thiện `src/lab13.py` cho A1–B4, chạy kiểm tra A1 **ĐẠT**, tính mô hình chi phí và các kịch bản độ nhạy; điền [bang_chi_phi.md](bang_chi_phi.md). Chi tiết trong `report/team/2A202603948_MaiDanhHieu.md`.
-- **Lê Tuấn Đạt (`2A202603949`) — Người gắn nhãn 2 kiêm giữ hồ sơ:** gắn nhãn độc lập 20 ca lỗi CP3, đối chiếu thống nhất ca 9 và hoàn thiện bảng khắc phục 5 ca trong [bang_loi.md](bang_loi.md); giữ và tổng hợp [ho_so_launch_v0.md](ho_so_launch_v0.md), hoàn thiện CP4–CP5. Chi tiết trong `report/team/2A202603949_LeTuanDat.md`.
-- **Vũ Huy Hiệu (`2A202603979`) — Người gắn nhãn 1 (CP3):** gắn nhãn độc lập 20 ca lỗi CP3 đạt đồng thuận 95% với Lê Tuấn Đạt, tham gia tranh luận ca 9 và hoàn thiện bảng khắc phục 5 ca lỗi. Chi tiết trong `report/team/2A202603979_VuHuyHieu.md`.
-- **Nguyễn Bá Quang Huy (`2A202603926`) — Người kiểm số & Nhóm trưởng:** đối chiếu số liệu tính tay, rà soát và duyệt merge các nhánh trên GitHub nhóm, điều phối chốt hồ sơ Gate 2a.
+## 6. Đóng góp của thành viên
 
-## 7. Hạn chế và hướng cải thiện
+- **Mai Danh Hiếu (2A202603948), người viết code:** phụ trách code và kết quả A–B trong `src/lab13.py` và `report/team/bang_chi_phi.md`.
+- **Lê Tuấn Đạt (2A202603949), người gắn nhãn 2 kiêm giữ hồ sơ:** phụ trách bộ nhãn độc lập thứ hai và hồ sơ launch; chi tiết trong `report/team/2A202603949_LeTuanDat.md`.
+- **Vũ Huy Hiệu (2A202603979), người gắn nhãn 1:** phụ trách bộ nhãn độc lập thứ nhất; chi tiết trong `report/team/2A202603979_VuHuyHieu.md`.
+- **Nguyễn Bá Quang Huy (2A202603926), người kiểm số:** đối chiếu phép tính và số liệu trong bảng chi phí; chi tiết trong `report/team/2A202603926_NguyenBaQuangHuy.md`.
 
-- Thời gian xem lại và làm lại hiện dựa trên hai cột `_simulated`; cần đo thời gian thực từ event `staff_review_decision` và `staff_rework_completed` ngay sau tuần 1 của pilot.
-- Cần bổ sung kiểm tra mẫu ngẫu nhiên 100 đơn/tuần để phát hiện sớm các lỗi ngầm về chi phí và bảng giá đệm.
+## 7. Duyệt chéo
+
+Kết quả hội đồng: **chưa cập nhật**. Bổ sung điểm, lý do và câu hỏi/câu trả lời sau phiên duyệt chéo theo `report/team/phieu_cham.md`; không suy đoán kết quả trước khi có phiếu.
 
 ## 8. Tài liệu tham khảo
 
-- Erol và cộng sự, *Cost-of-Pass: An Economic Framework for Evaluating Language Models*, [arxiv.org/abs/2504.13359](https://arxiv.org/abs/2504.13359)
-- Google PAIR, *People + AI Guidebook*, chương "Errors + Graceful Failure", [pair.withgoogle.com](https://pair.withgoogle.com)
-- Tài liệu `statsmodels`, lớp `NormalIndPower` (`stats.power`)
+- Erol và cộng sự, *Cost-of-Pass: An Economic Framework for Evaluating Language Models*, https://arxiv.org/abs/2504.13359
+- Google PAIR, *People + AI Guidebook*, chương “Errors + Graceful Failure”, https://pair.withgoogle.com
+- Tài liệu `statsmodels`, lớp `NormalIndPower` (`stats.power`).
