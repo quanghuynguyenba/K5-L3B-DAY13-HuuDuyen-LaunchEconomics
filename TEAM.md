@@ -50,3 +50,20 @@ Sao chép mục dưới đây cho từng thành viên.
 ### Bằng chứng
 
 -
+
+## LeTuanDat-2A202603949
+
+### Phần việc phụ trách
+
+- Người gắn nhãn 2 kiêm giữ hồ sơ: gắn nhãn độc lập 20 ca lỗi (CP3), giữ và điền `report/team/ho_so_launch_v0.md`.
+
+### Đóng góp cụ thể
+
+- Bộ nhãn người 2 cho 20 ca, đối chiếu với người gắn nhãn 1 (Vũ Huy Hiệu): 19/20 ca trùng (95%), thống nhất ca 9 là "Do người dùng" (`report/team/bang_loi.md`).
+- Điền `report/team/ho_so_launch_v0.md` (7 mục, đề xuất Go có điều kiện) và cập nhật `TEAM.md` đủ 4 thành viên.
+- Báo cáo cá nhân: `report/team/2A202603949_LeTuanDat.md`.
+
+### Bằng chứng
+
+- Commit `27f0d0d`, `e61b0c1`, `4774c3c`, `3b4e225`, `0407f8a` (merge qua PR #2 và PR #4).
+- Lưu ý: 5 commit trên hiện tác giả là "Lê Tuấn Đạt <letuandat@vinuni.edu.vn>". Email này bị cấu hình nhầm trong git trên máy cá nhân, không phải hộp thư thật, nên GitHub không liên kết được với tài khoản. Cả 5 commit đều do tài khoản GitHub `letuandat131` thực hiện. Commit thêm ghi chú này dùng email đã liên kết với `letuandat131`.
