@@ -4,7 +4,7 @@
 
 - Họ tên: Nguyễn Bá Quang Huy
 - MSSV: 2A202603926
-- Email: Chưa cung cấp
+- Email: quanghuynguyenba@gmail.com
 - Vai trong nhóm: Người kiểm số
 
 ## 2. Phần việc phụ trách
