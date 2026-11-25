@@ -4,9 +4,9 @@
 
 ## Hai bộ nhãn độc lập
 
-Người gắn nhãn 1: Mai Danh Hiếu · Người gắn nhãn 2: Lê Tuấn Đạt (gắn trong 8 phút, không trao đổi)
+Người gắn nhãn 1: Vũ Huy Hiệu · Người gắn nhãn 2: Lê Tuấn Đạt (gắn trong 8 phút, không trao đổi)
 
-| Ca | Nhãn người 1 (Mai Danh Hiếu) | Nhãn người 2 (Lê Tuấn Đạt) | Trùng? | Nhãn thống nhất |
+| Ca | Nhãn người 1 (Vũ Huy Hiệu) | Nhãn người 2 (Lê Tuấn Đạt) | Trùng? | Nhãn thống nhất |
 | --: | --- | --- | --- | --- |
 | 1 | Do người dùng | Do người dùng | Có | Do người dùng |
 | 2 | Hệ thống | Hệ thống | Có | Hệ thống |

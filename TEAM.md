@@ -11,10 +11,10 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Mai Danh Hiếu | 2A202603948 |       |        | Người viết code (CP1–CP2) kiêm Người gắn nhãn 1 |
-|   2 | Lê Tuấn Đạt |      |       |        | Người gắn nhãn 2 kiêm giữ hồ sơ |
-|   3 |        |      |       |        |         |
-|   4 |        |      |       |        |         |
+|   1 | Mai Danh Hiếu | 2A202603948 |       | danhhieu204ns | Người viết code (CP1–CP2) |
+|   2 | Lê Tuấn Đạt | 2A202603949 |       | letuandat131 | Người gắn nhãn 2 kiêm giữ hồ sơ |
+|   3 | Vũ Huy Hiệu | 2A202603979 |       | hieunhangia | Người gắn nhãn 1 (CP3) |
+|   4 | Nguyễn Bá Quang Huy | 2A202603926 |       | quanghuynguyenba | Người kiểm số |
 
 Bốn vai của lab:
 

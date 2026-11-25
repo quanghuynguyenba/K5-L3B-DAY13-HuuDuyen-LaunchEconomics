@@ -5,6 +5,7 @@ Bản gốc chưa sửa nằm ở lab13_starter.py.
 """
 import math
 import sys
+from statistics import NormalDist
 import pandas as pd
 
 # Bảng giá GIẢ ĐỊNH của lab (không phải giá thật của nhà cung cấp nào)
@@ -152,6 +153,51 @@ if __name__ == '__main__':
               f'{kq["so_lam_lai"]} làm lại; tổng {kq["tong"]:,.0f} đ; '
               f'{kq["cps"]:,.0f} đ/việc ({kq["cps"] / BASELINE:.2f}×); '
               f'xem lại hòa vốn ≤ {hoa_von:.1f} phút')
-    # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
-    #   from statsmodels.stats.proportion import proportion_effectsize
-    #   from statsmodels.stats.power import NormalIndPower
+    # Nhiệm vụ D · cỡ mẫu & chỉ số thử nghiệm (CP4, E1)
+    def co_mau(p1, p2, alpha=0.05, power=0.80):
+        za = NormalDist().inv_cdf(1 - alpha / 2)
+        zb = NormalDist().inv_cdf(power)
+        pb = (p1 + p2) / 2
+        return math.ceil(
+            (za * math.sqrt(2 * pb * (1 - pb))
+             + zb * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))) ** 2 / (p2 - p1) ** 2
+        )
+
+    icc = 0.02
+    n_5diem = co_mau(0.70, 0.75)
+    de_75 = 1 + (75 - 1) * icc
+    n_theo_nv_75 = math.ceil(n_5diem * de_75)
+    n_6diem = co_mau(0.70, 0.76)
+    m_6diem = math.ceil(n_6diem * (1 - icc) / (20 - n_6diem * icc))
+    de_6diem = 1 + (m_6diem - 1) * icc
+    print('\nD1 · Cỡ mẫu pilot (baseline=0.70, alpha=0.05, power=0.80, ICC=0.02)')
+    print(f'a) Theo yêu cầu (+5 điểm): {n_5diem:,} yêu cầu/nhóm')
+    print(f'b) Theo nhân viên m=75: DE={de_75:.2f}, {n_theo_nv_75:,}/nhóm '
+          f'({math.ceil(n_theo_nv_75 / 75)} nhân viên/nhóm > 40 tổng)')
+    print(f'c) 20 nhân viên/nhóm: tối đa {20 / icc:,.0f} < {n_5diem:,} (không đạt +5 điểm)')
+    print(f'd) 6 depot/nhóm: tối đa {6 / icc:,.0f} (không đạt)')
+    print(f'e) Mức chênh 6 điểm ({n_6diem:,}/nhóm), 20 nhân viên/nhóm: '
+          f'm >= {m_6diem} yêu cầu/người (DE={de_6diem:.2f})')
+
+    try:
+        from statsmodels.stats.proportion import proportion_effectsize
+        from statsmodels.stats.power import NormalIndPower
+        power_5 = NormalIndPower().power(
+            effect_size=proportion_effectsize(0.75, 0.70), nobs1=n_6diem, alpha=0.05, ratio=1.0
+        )
+        print(f'   Power ở mức chênh 5 điểm với n={n_6diem}: {power_5:.2f}')
+    except ImportError:
+        pass
+
+    mo_lai_all = reqs['mo_lai_trong_7_ngay'].mean()
+    mo_lai_pv = pham_vi['mo_lai_trong_7_ngay'].mean()
+    print(f'D3 · Mở lại 7 ngày hiện tại: toàn bộ {mo_lai_all:.2%} '
+          f'({reqs["mo_lai_trong_7_ngay"].sum()}/{len(reqs)}), '
+          f'noi_dia+hang_nang {mo_lai_pv:.2%} '
+          f'({pham_vi["mo_lai_trong_7_ngay"].sum()}/{len(pham_vi)})')
+
+    chinh = ((reqs['dong_trong_24h'] == 1) & (reqs['mo_lai_trong_7_ngay'] == 0)).mean()
+    xem = reqs[reqs['duoc_xem_lai'] == 1]
+    bo_qua = xem['quyet_dinh_xem_lai'].isin(['sua', 'bo']).mean()
+    print(f'\nE1 · Chỉ số thử trên 1.200 yêu cầu: chính={chinh:.2%}, '
+          f'bỏ qua gợi ý={bo_qua:.2%}, mở lại 7 ngày={mo_lai_all:.2%}')
